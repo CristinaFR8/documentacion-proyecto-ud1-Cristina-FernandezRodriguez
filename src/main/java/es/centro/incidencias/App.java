@@ -1,15 +1,32 @@
+
 package es.centro.incidencias;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-
+/**
+ * Punto de entrada de la aplicación de gestión de incidencias.
+ * Permite consultar incidencias mediante un menú interactivo
+ * o a través de operaciones indicadas como argumentos.
+ *
+ * @author Cristina Fernández Rodríguez
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public final class App {
 
     private App() {
     }
 
+    /**
+     * Inicia la aplicación y procesa la operación solicitada.
+     * Si no se proporcionan argumentos, muestra el menú interactivo.
+     *
+     * @param args argumentos de la línea de comandos; pueden indicar
+     *             una operación como {@code listar}, {@code abiertas},
+     *             {@code buscar}, {@code detalle} o {@code ayuda}
+     */
     public static void main(String[] args) {
         GestorIncidencias gestor = new GestorIncidencias();
 
@@ -136,6 +153,7 @@ public final class App {
             System.out.println("No se han encontrado incidencias.");
             return;
         }
+
         incidencias.forEach(System.out::println);
     }
 
